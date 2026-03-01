@@ -18,14 +18,28 @@ class _BottomNavbarState extends State<BottomNavbar> {
   void _onItemTapped(int index) {
     if (index == widget.currentIndex) return;
 
-    final pages = const [HomePage(), ShopPage(), BoutMePage()];
+    Widget page;
+
+    switch (index) {
+      case 0:
+        page = HomePage();
+        break;
+      case 1:
+        page = ShopPage();
+        break;
+      case 2:
+        page = BoutMePage();
+        break;
+      default:
+        page = HomePage();
+    }
 
     Navigator.pushReplacement(
       context,
       PageRouteBuilder(
+        pageBuilder: (_, __, ___) => page,
         transitionDuration: Duration.zero,
         reverseTransitionDuration: Duration.zero,
-        pageBuilder: (_, __, ___) => pages[index],
       ),
     );
   }

@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: GoogleFonts.poppinsTextTheme().copyWith(
+        textTheme: GoogleFonts.slabo27pxTextTheme().copyWith(
           headlineLarge: GoogleFonts.limelight(fontSize: 60, height: 1),
         ),
       ),
